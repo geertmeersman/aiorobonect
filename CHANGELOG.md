@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.1.2](https://github.com/geertmeersman/aiorobonect/tree/v0.1.2) (2023-05-15)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.1...v0.1.2)
+
 ## [v0.1.1](https://github.com/geertmeersman/aiorobonect/tree/v0.1.1) (2023-05-15)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.0...v0.1.1)
