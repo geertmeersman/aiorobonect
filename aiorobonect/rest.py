@@ -37,7 +37,8 @@ class RobonectClient:
 
     async def session_close(self):
         """Close the session."""
-        await self.session.close()
+        if self.session:
+            await self.session.close()
         self.session = None
 
     async def async_cmd(self, command=None, params={}) -> list[dict]:
@@ -53,10 +54,12 @@ class RobonectClient:
         async with self.session.get(
             f"http://{self.host}/json?cmd={command}&{params}"
         ) as response:
-            result = await response.json()
-            _LOGGER.debug("Response mower data: %s", response)
             if response.status == 200:
-                result = await response.json()
+                try:
+                    result = await response.json(content_type=None)
+                except Exception as e:
+                    _LOGGER.error(e)
+                    return False
                 _LOGGER.debug("Result mower data: %s", result)
             if response.status >= 400:
                 await self.session_close()
