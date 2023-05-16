@@ -25,18 +25,13 @@ class RobonectClient:
         self.transform_json = transform_json
         if username is not None and password is not None:
             self.auth = aiohttp.BasicAuth(login=username, password=password)
-            self.session = aiohttp.ClientSession(
-                read_timeout=TIMEOUT, raise_for_status=True, auth=self.auth
-            )
 
     def session_start(self):
         """Start the aiohttp session."""
         if self.session:
             return True
         if self.username is not None and self.password is not None:
-            self.session = aiohttp.ClientSession(
-                read_timeout=TIMEOUT, raise_for_status=True, auth=self.auth
-            )
+            self.session = aiohttp.ClientSession(read_timeout=TIMEOUT, auth=self.auth)
             return True
         return False
 
