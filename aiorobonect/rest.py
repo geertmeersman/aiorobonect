@@ -64,7 +64,7 @@ class RobonectClient:
                 result = await response.json()
                 _LOGGER.debug("Result mower data: %s", result)
             if response.status >= 400:
-                self.session_close()
+                await self.session_close()
                 response.raise_for_status()
         if self.transform_json:
             return transform_json_to_single_depth(result)
