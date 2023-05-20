@@ -79,7 +79,7 @@ class RobonectClient:
         await self.session_close()
         return result
 
-    async def state(self) -> list[dict]:
+    async def state(self) -> dict:
         """Send status command to mower."""
         self.session_start()
         result = await self.async_cmd("status")
