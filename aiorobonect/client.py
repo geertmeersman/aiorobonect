@@ -85,6 +85,5 @@ class RobonectClient:
         self.session_start()
         result = await self.async_cmd("status")
         self.sleeping = result.get("status").get("status") == 17
-        print(result.json)
         await self.session_close()
         return result
