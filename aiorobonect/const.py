@@ -1,3 +1,3 @@
 """The constants for aiorobonect."""
 
-TIMEOUT = 10
+TIMEOUT = 20

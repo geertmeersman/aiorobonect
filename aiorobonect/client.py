@@ -22,6 +22,7 @@ class RobonectClient:
         self.username = username
         self.password = password
         self.session = None
+        self.sleeping = None
         self.transform_json = transform_json
         if username is not None and password is not None:
             self.auth = aiohttp.BasicAuth(login=username, password=password)
@@ -68,12 +69,14 @@ class RobonectClient:
             return transform_json_to_single_depth(result)
         return result
 
-    async def async_cmds(self, commands=None) -> list[dict]:
+    async def async_cmds(self, commands=None, bypass_sleeping=False) -> list[dict]:
         """Send command to mower."""
         self.session_start()
         result = []
-        for cmd in commands:
-            result.append({cmd: await self.async_cmd(cmd)})
+        result.append({"status": await self.state()})
+        if not self.sleeping or bypass_sleeping:
+            for cmd in commands:
+                result.append({cmd: await self.async_cmd(cmd)})
         await self.session_close()
         return result
 
@@ -81,5 +84,7 @@ class RobonectClient:
         """Send status command to mower."""
         self.session_start()
         result = await self.async_cmd("status")
+        self.sleeping = result.get("status").get("status") == 17
+        print(result.json)
         await self.session_close()
         return result
