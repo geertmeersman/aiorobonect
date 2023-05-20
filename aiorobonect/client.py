@@ -69,18 +69,17 @@ class RobonectClient:
             return transform_json_to_single_depth(result)
         return result
 
-    async def async_cmds(self, commands=None, bypass_sleeping=False) -> list[dict]:
+    async def async_cmds(self, commands=None, bypass_sleeping=False) -> dict:
         """Send command to mower."""
         self.session_start()
-        result = []
-        result.append({"status": await self.state()})
+        result = {"status": await self.state()}
         if not self.sleeping or bypass_sleeping:
             for cmd in commands:
-                result.append({cmd: await self.async_cmd(cmd)})
+                result.update({cmd: await self.async_cmd(cmd)})
         await self.session_close()
         return result
 
-    async def state(self) -> list[dict]:
+    async def state(self) -> dict:
         """Send status command to mower."""
         self.session_start()
         result = await self.async_cmd("status")
