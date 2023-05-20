@@ -1,2 +1,2 @@
 """Robonect library using aiohttp."""
-from .rest import RobonectClient
+from .client import RobonectClient
