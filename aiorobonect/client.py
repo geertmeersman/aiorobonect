@@ -56,23 +56,32 @@ class RobonectClient:
             return
 
         self.session_start()
-        async with self.session.get(
-            f"http://{self.host}/json?cmd={command}&{params}"
-        ) as response:
-            if response.status == 200:
-                try:
+        try:
+            async with self.session.get(
+                f"http://{self.host}/json?cmd={command}&{params}"
+            ) as response:
+                if response.status == 200:
                     result = await response.json(content_type=None)
-                except Exception as e:
+                    _LOGGER.debug("Result mower data: %s", result)
+                if response.status >= 400:
                     await self.session_close()
-                    _LOGGER.error(e)
-                    return False
-                _LOGGER.debug("Result mower data: %s", result)
-            if response.status >= 400:
-                await self.session_close()
-                response.raise_for_status()
-        if self.transform_json:
-            return transform_json_to_single_depth(result)
-        return result
+                    response.raise_for_status()
+            if self.transform_json:
+                return transform_json_to_single_depth(result)
+            await self.session.close()
+            return result
+        except aiohttp.ClientError as exception:
+            # Handle any client-side errors
+            _LOGGER.error(f"Client error: {exception}")
+        except aiohttp.ServerError as exception:
+            # Handle any server-side errors
+            _LOGGER.error(f"Server error: {exception}")
+        except Exception as exception:
+            # Handle any other exceptions
+            _LOGGER.error(f"Error: {exception}")
+        finally:
+            await self.session.close()
+            return False
 
     async def async_cmds(self, commands=None, bypass_sleeping=False) -> dict:
         """Send command to mower."""
