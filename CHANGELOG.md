@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.17](https://github.com/geertmeersman/aiorobonect/tree/v0.1.17) (2023-05-24)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.16...v0.1.17)
+
+**Implemented enhancements:**
+
+- Session closure [\#11](https://github.com/geertmeersman/aiorobonect/pull/11) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.1.16](https://github.com/geertmeersman/aiorobonect/tree/v0.1.16) (2023-05-24)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.15...v0.1.16)
