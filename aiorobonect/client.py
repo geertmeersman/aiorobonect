@@ -74,21 +74,9 @@ class RobonectClient:
                 return transform_json_to_single_depth(result)
             await self.session.close()
             return result
-        except aiohttp.ClientError as exception:
-            # Handle any client-side errors
-            await self.session.close()
-            raise RobonectException(f"Client error:{exception}") from exception
-        except aiohttp.ServerError as exception:
-            # Handle any server-side errors
-            await self.session.close()
-            raise RobonectException(f"Server error:{exception}") from exception
         except Exception as exception:
-            # Handle any other exceptions
             await self.session.close()
-            raise RobonectException(f"Error:{exception}") from exception
-        finally:
-            await self.session.close()
-            return False
+            raise exception
 
     async def async_cmds(self, commands=None, bypass_sleeping=False) -> dict:
         """Send command to mower."""
