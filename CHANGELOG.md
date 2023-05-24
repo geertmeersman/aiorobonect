@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.18](https://github.com/geertmeersman/aiorobonect/tree/v0.1.18) (2023-05-24)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.17...v0.1.18)
+
+**Implemented enhancements:**
+
+- JSON validator [\#12](https://github.com/geertmeersman/aiorobonect/pull/12) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.1.17](https://github.com/geertmeersman/aiorobonect/tree/v0.1.17) (2023-05-24)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.16...v0.1.17)
