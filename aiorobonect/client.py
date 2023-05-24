@@ -12,6 +12,10 @@ from .utils import transform_json_to_single_depth
 _LOGGER = logging.getLogger(__name__)
 
 
+class RobonectException(Exception):
+    """Raised when an update has failed."""
+
+
 class RobonectClient:
     """Class to communicate with the Robonect API."""
 
@@ -72,13 +76,16 @@ class RobonectClient:
             return result
         except aiohttp.ClientError as exception:
             # Handle any client-side errors
-            _LOGGER.error(f"Client error: {exception}")
+            await self.session.close()
+            raise RobonectException(f"Client error:{exception}") from exception
         except aiohttp.ServerError as exception:
             # Handle any server-side errors
-            _LOGGER.error(f"Server error: {exception}")
+            await self.session.close()
+            raise RobonectException(f"Server error:{exception}") from exception
         except Exception as exception:
             # Handle any other exceptions
-            _LOGGER.error(f"Error: {exception}")
+            await self.session.close()
+            raise RobonectException(f"Error:{exception}") from exception
         finally:
             await self.session.close()
             return False
