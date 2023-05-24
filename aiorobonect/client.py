@@ -1,6 +1,7 @@
 """Robonect library using aiohttp."""
 from __future__ import annotations
 
+import json
 import logging
 import urllib.parse
 
@@ -30,6 +31,16 @@ class RobonectClient:
         self.transform_json = transform_json
         if username is not None and password is not None:
             self.auth = aiohttp.BasicAuth(login=username, password=password)
+
+    def validate_json(self, json_str):
+        """Validate json string."""
+        if type(json_str) is dict:
+            return True
+        try:
+            return json.loads(json_str)
+        except ValueError as error:
+            print(error)
+            return False
 
     def session_start(self):
         """Start the aiohttp session."""
@@ -71,6 +82,8 @@ class RobonectClient:
                     await self.session_close()
                     response.raise_for_status()
             await self.session_close()
+            if not self.validate_json(result):
+                return False
             if self.transform_json:
                 return transform_json_to_single_depth(result)
             return result
