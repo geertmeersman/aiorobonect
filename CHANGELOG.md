@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.14](https://github.com/geertmeersman/aiorobonect/tree/v0.1.14) (2023-05-24)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.13...v0.1.14)
+
+**Merged pull requests:**
+
+- Exceptions management [\#8](https://github.com/geertmeersman/aiorobonect/pull/8) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.1.13](https://github.com/geertmeersman/aiorobonect/tree/v0.1.13) (2023-05-24)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.12...v0.1.13)
