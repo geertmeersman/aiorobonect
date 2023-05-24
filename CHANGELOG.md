@@ -1,5 +1,21 @@
 # Changelog
 
+## [v0.1.12](https://github.com/geertmeersman/aiorobonect/tree/v0.1.12) (2023-05-24)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.11...v0.1.12)
+
+## [v0.1.11](https://github.com/geertmeersman/aiorobonect/tree/v0.1.11) (2023-05-24)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.10...v0.1.11)
+
+**Implemented enhancements:**
+
+- Commands added and session closed when exception occurs [\#6](https://github.com/geertmeersman/aiorobonect/pull/6) ([geertmeersman](https://github.com/geertmeersman))
+
+**Closed issues:**
+
+- Can you provide more help on using this plugin? [\#5](https://github.com/geertmeersman/aiorobonect/issues/5)
+
 ## [v0.1.10](https://github.com/geertmeersman/aiorobonect/tree/v0.1.10) (2023-05-20)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.9...v0.1.10)
