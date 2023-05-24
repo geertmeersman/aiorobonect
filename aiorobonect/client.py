@@ -86,19 +86,22 @@ class RobonectClient:
     async def async_cmds(self, commands=None, bypass_sleeping=False) -> dict:
         """Send command to mower."""
         self.session_start()
-        result = {"status": await self.state()}
-        if not self.sleeping or bypass_sleeping:
-            for cmd in commands:
-                result.update({cmd: await self.async_cmd(cmd)})
-        await self.session_close()
+        result = await self.state()
+        if result:
+            result = {"status": result}
+            if not self.sleeping or bypass_sleeping:
+                for cmd in commands:
+                    result.update({cmd: await self.async_cmd(cmd)})
+            await self.session_close()
         return result
 
     async def state(self) -> dict:
         """Send status command to mower."""
         self.session_start()
         result = await self.async_cmd("status")
-        self.sleeping = result.get("status").get("status") == 17
-        await self.session_close()
+        if result:
+            self.sleeping = result.get("status").get("status") == 17
+            await self.session_close()
         return result
 
     async def async_start(self) -> bool:
