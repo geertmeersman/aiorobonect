@@ -70,12 +70,12 @@ class RobonectClient:
                 if response.status >= 400:
                     await self.session_close()
                     response.raise_for_status()
+            await self.session_close()
             if self.transform_json:
                 return transform_json_to_single_depth(result)
-            await self.session.close()
             return result
         except Exception as exception:
-            await self.session.close()
+            await self.session_close()
             raise exception
 
     async def async_cmds(self, commands=None, bypass_sleeping=False) -> dict:
