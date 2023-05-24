@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.1.13](https://github.com/geertmeersman/aiorobonect/tree/v0.1.13) (2023-05-24)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.12...v0.1.13)
+
+**Implemented enhancements:**
+
+- Exceptions management [\#7](https://github.com/geertmeersman/aiorobonect/pull/7) ([geertmeersman](https://github.com/geertmeersman))
+
+**Merged pull requests:**
+
+- Bump danielchabr/pr-labels-checker from 3.2 to 3.3 [\#4](https://github.com/geertmeersman/aiorobonect/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.1.12](https://github.com/geertmeersman/aiorobonect/tree/v0.1.12) (2023-05-24)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.11...v0.1.12)
