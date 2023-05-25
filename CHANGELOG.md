@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.22](https://github.com/geertmeersman/aiorobonect/tree/v0.1.22) (2023-05-25)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.21...v0.1.22)
+
+**Merged pull requests:**
+
+- fix: iso-8859-1 encoding for json answers [\#15](https://github.com/geertmeersman/aiorobonect/pull/15) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.1.21](https://github.com/geertmeersman/aiorobonect/tree/v0.1.21) (2023-05-25)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.20...v0.1.21)
