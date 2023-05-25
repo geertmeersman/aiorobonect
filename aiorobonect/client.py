@@ -13,6 +13,29 @@ from .utils import transform_json_to_single_depth
 _LOGGER = logging.getLogger(__name__)
 
 
+def encode_dict_values_to_utf8(dictionary):
+    encoded_dict = {}
+    for key, value in dictionary.items():
+        if isinstance(value, dict):
+            encoded_dict[key] = encode_dict_values_to_utf8(value)
+        elif isinstance(value, str):
+            encoded_dict[key] = value.encode("utf-8")
+        else:
+            encoded_dict[key] = value
+    return encoded_dict
+
+
+def validate_json(json_str):
+    """Validate json string."""
+    if type(json_str) is dict:
+        return True
+    try:
+        return json.loads(json_str)
+    except ValueError as error:
+        print(error)
+        return False
+
+
 class RobonectException(Exception):
     """Raised when an update has failed."""
 
@@ -31,16 +54,6 @@ class RobonectClient:
         self.transform_json = transform_json
         if username is not None and password is not None:
             self.auth = aiohttp.BasicAuth(login=username, password=password)
-
-    def validate_json(self, json_str):
-        """Validate json string."""
-        if type(json_str) is dict:
-            return True
-        try:
-            return json.loads(json_str)
-        except ValueError as error:
-            print(error)
-            return False
 
     def session_start(self):
         """Start the aiohttp session."""
@@ -82,7 +95,8 @@ class RobonectClient:
                     await self.session_close()
                     response.raise_for_status()
             await self.session_close()
-            if not self.validate_json(result):
+            result = encode_dict_values_to_utf8(result)
+            if not validate_json(result):
                 return False
             if self.transform_json:
                 return transform_json_to_single_depth(result)
