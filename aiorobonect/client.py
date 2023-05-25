@@ -95,7 +95,6 @@ class RobonectClient:
                     await self.session_close()
                     response.raise_for_status()
             await self.session_close()
-            result = encode_dict_values_to_utf8(result)
             if not validate_json(result):
                 return False
             if self.transform_json:
