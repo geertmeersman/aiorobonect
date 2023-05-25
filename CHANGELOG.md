@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.1.19](https://github.com/geertmeersman/aiorobonect/tree/v0.1.19) (2023-05-25)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.18...v0.1.19)
+
+**Implemented enhancements:**
+
+- JSON UTF-8 encoding forced [\#13](https://github.com/geertmeersman/aiorobonect/pull/13) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.1.18](https://github.com/geertmeersman/aiorobonect/tree/v0.1.18) (2023-05-24)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.17...v0.1.18)
