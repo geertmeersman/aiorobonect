@@ -89,7 +89,7 @@ class RobonectClient:
                 f"http://{self.host}/json?cmd={command}&{params}"
             ) as response:
                 if response.status == 200:
-                    result = await response.json(encoding="utf-8")
+                    result = await response.json(encoding="iso-8859-1")
                     _LOGGER.debug("Result mower data: %s", result)
                 if response.status >= 400:
                     await self.session_close()
