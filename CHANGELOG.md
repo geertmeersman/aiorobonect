@@ -1,5 +1,15 @@
 # Changelog
 
+## [v0.2.0](https://github.com/geertmeersman/aiorobonect/tree/v0.2.0) (2023-05-26)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.22...v0.2.0)
+
+**Merged pull requests:**
+
+- feat: pr checker [\#18](https://github.com/geertmeersman/aiorobonect/pull/18) ([geertmeersman](https://github.com/geertmeersman))
+- PR Checker [\#17](https://github.com/geertmeersman/aiorobonect/pull/17) ([geertmeersman](https://github.com/geertmeersman))
+- Use ISO-8859-15 as it fully includes French and other language compatibility [\#16](https://github.com/geertmeersman/aiorobonect/pull/16) ([tsparber](https://github.com/tsparber))
+
 ## [v0.1.22](https://github.com/geertmeersman/aiorobonect/tree/v0.1.22) (2023-05-25)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.21...v0.1.22)
@@ -12,7 +22,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.20...v0.1.21)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - aiohttp response to utf-8 [\#14](https://github.com/geertmeersman/aiorobonect/pull/14) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -24,7 +34,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.18...v0.1.19)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - JSON UTF-8 encoding forced [\#13](https://github.com/geertmeersman/aiorobonect/pull/13) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -32,7 +42,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.17...v0.1.18)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - JSON validator [\#12](https://github.com/geertmeersman/aiorobonect/pull/12) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -40,7 +50,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.16...v0.1.17)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - Session closure [\#11](https://github.com/geertmeersman/aiorobonect/pull/11) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -48,7 +58,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.15...v0.1.16)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - Exceptions management [\#10](https://github.com/geertmeersman/aiorobonect/pull/10) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -56,7 +66,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.14...v0.1.15)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - Exceptions management [\#9](https://github.com/geertmeersman/aiorobonect/pull/9) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -72,12 +82,9 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.12...v0.1.13)
 
-**Implemented enhancements:**
-
-- Exceptions management [\#7](https://github.com/geertmeersman/aiorobonect/pull/7) ([geertmeersman](https://github.com/geertmeersman))
-
 **Merged pull requests:**
 
+- Exceptions management [\#7](https://github.com/geertmeersman/aiorobonect/pull/7) ([geertmeersman](https://github.com/geertmeersman))
 - Bump danielchabr/pr-labels-checker from 3.2 to 3.3 [\#4](https://github.com/geertmeersman/aiorobonect/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v0.1.12](https://github.com/geertmeersman/aiorobonect/tree/v0.1.12) (2023-05-24)
@@ -88,19 +95,19 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.10...v0.1.11)
 
-**Implemented enhancements:**
-
-- Commands added and session closed when exception occurs [\#6](https://github.com/geertmeersman/aiorobonect/pull/6) ([geertmeersman](https://github.com/geertmeersman))
-
 **Closed issues:**
 
 - Can you provide more help on using this plugin? [\#5](https://github.com/geertmeersman/aiorobonect/issues/5)
+
+**Merged pull requests:**
+
+- Commands added and session closed when exception occurs [\#6](https://github.com/geertmeersman/aiorobonect/pull/6) ([geertmeersman](https://github.com/geertmeersman))
 
 ## [v0.1.10](https://github.com/geertmeersman/aiorobonect/tree/v0.1.10) (2023-05-20)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.9...v0.1.10)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - async\_cmds changed to dict [\#3](https://github.com/geertmeersman/aiorobonect/pull/3) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -108,7 +115,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.8...v0.1.9)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - Cleanup [\#2](https://github.com/geertmeersman/aiorobonect/pull/2) ([geertmeersman](https://github.com/geertmeersman))
 
@@ -148,7 +155,7 @@
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/8f6852f62d363c1a47c0c56501a7dc10703fbc10...v0.1.0)
 
-**Implemented enhancements:**
+**Merged pull requests:**
 
 - Bump danielchabr/pr-labels-checker from 3.1 to 3.2 [\#1](https://github.com/geertmeersman/aiorobonect/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
 
