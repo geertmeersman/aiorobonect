@@ -57,6 +57,7 @@ jobs:
             });
   check_semver_labels:
     name: Check Semver labels in PR
+    needs: assign_labels
     runs-on: "ubuntu-latest"
     steps:
       - name: Check for Semver labels
