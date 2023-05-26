@@ -27,7 +27,10 @@ jobs:
       - name: Get commit messages
         id: commit_messages
         run: |
-          COMMIT_MESSAGES=$(git log --format=%s $(git merge-base HEAD ${{ github.event.pull_request.base.ref }})..HEAD)
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          COMMIT_MESSAGES=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}/commits" | \
+            jq -r '.[].commit.message')
           echo "$COMMIT_MESSAGES" > COMMIT_MESSAGES
           echo "$COMMIT_MESSAGES"
 
