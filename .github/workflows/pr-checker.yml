@@ -29,7 +29,7 @@ jobs:
         run: |
           COMMIT_MESSAGES=$(git log --format=%s $(git rev-list --no-merges -n 1 ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}))
           echo "$COMMIT_MESSAGES" > COMMIT_MESSAGES
-          cat "$COMMIT_MESSAGES"
+          echo "$COMMIT_MESSAGES"
 
       - name: Determine SemVer level
         id: semver_level
