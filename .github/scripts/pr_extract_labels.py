@@ -26,7 +26,10 @@ def get_semver_level(commit_messages):
 
 
 with open("COMMIT_MESSAGES", "r") as file:
-    semver_level = get_semver_level(file)
-    types = extract_semver_types(file)
+    messages = []
+    for line in file:
+        messages.append(line.strip())
+    semver_level = get_semver_level(messages)
+    types = extract_semver_types(messages)
     types.append(semver_level)
     print(types)
