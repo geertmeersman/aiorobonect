@@ -27,7 +27,7 @@ jobs:
       - name: Get commit messages
         id: commit_messages
         run: |
-          COMMIT_MESSAGES=$(git log --format=%s $(git rev-list --no-merges -n 1 ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}))
+          COMMIT_MESSAGES=$(git log --format=%s $(git merge-base HEAD ${{ github.event.pull_request.base.ref }})..HEAD)
           echo "$COMMIT_MESSAGES" > COMMIT_MESSAGES
           echo "$COMMIT_MESSAGES"
 
