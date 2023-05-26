@@ -15,6 +15,9 @@ jobs:
   assign_labels:
     name: Assign SemVer labels
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: ⤵️　Checkout code
         uses: actions/checkout@v3
@@ -24,8 +27,12 @@ jobs:
       - name: Get commit messages
         id: commit_messages
         run: |
-          COMMIT_MESSAGES=$(git log --format=%s $(git rev-list --no-merges -n 1 ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }}))
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          COMMIT_MESSAGES=$(curl -sSL -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${PR_NUMBER}/commits" | \
+            jq -r '.[].commit.message')
           echo "$COMMIT_MESSAGES" > COMMIT_MESSAGES
+          echo "$COMMIT_MESSAGES"
 
       - name: Determine SemVer level
         id: semver_level
@@ -50,10 +57,11 @@ jobs:
             });
   check_semver_labels:
     name: Check Semver labels in PR
+    needs: assign_labels
     runs-on: "ubuntu-latest"
     steps:
       - name: Check for Semver labels
-        uses: danielchabr/pr-labels-checker@v3.1
+        uses: danielchabr/pr-labels-checker@v3.3
         with:
           hasSome: major,minor,patch
           githubToken: ${{ secrets.GITHUB_TOKEN }}
