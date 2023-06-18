@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.2.1](https://github.com/geertmeersman/aiorobonect/tree/v0.2.1) (2023-06-18)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.0...v0.2.1)
+
+**Merged pull requests:**
+
+- fix: don't return coroutines [\#20](https://github.com/geertmeersman/aiorobonect/pull/20) ([geertmeersman](https://github.com/geertmeersman))
+- refactor: precommit [\#19](https://github.com/geertmeersman/aiorobonect/pull/19) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.2.0](https://github.com/geertmeersman/aiorobonect/tree/v0.2.0) (2023-05-26)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.1.22...v0.2.0)
