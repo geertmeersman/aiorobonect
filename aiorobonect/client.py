@@ -42,7 +42,7 @@ class RobonectException(Exception):
 
     def __init__(self, cmd, exception):
         """Init the Robonect Exception."""
-        self.message = f"Robonect call for cmd {cmd} failed: {exception.message}"
+        self.message = f"Robonect call for cmd {cmd} failed: {exception}"
         super().__init__(self.message)
 
 
