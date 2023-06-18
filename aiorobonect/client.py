@@ -85,6 +85,7 @@ class RobonectClient:
 
         self.session_start()
         try:
+            _LOGGER.debug(f"Calling http://{self.host}/json?cmd={command}&{params}")
             async with self.session.get(
                 f"http://{self.host}/json?cmd={command}&{params}"
             ) as response:
@@ -110,7 +111,9 @@ class RobonectClient:
             result = {"status": result}
             if not self.sleeping or bypass_sleeping:
                 for cmd in commands:
-                    result.update({cmd: await self.async_cmd(cmd)})
+                    json_res = await self.async_cmd(cmd)
+                    if json_res:
+                        result.update({cmd: json_res})
             await self.session_close()
         return result
 
@@ -125,23 +128,28 @@ class RobonectClient:
 
     async def async_start(self) -> bool:
         """Start the mower."""
-        return await self.async_cmd("start")
+        result = await self.async_cmd("start")
+        return result
 
     async def async_stop(self) -> bool:
         """Stop the mower."""
-        return await self.async_cmd("stop")
+        result = await self.async_cmd("stop")
+        return result
 
     async def async_reboot(self) -> bool:
         """Reboot Robonect."""
-        return await self.async_cmd("service", {"service": "reboot"})
+        result = await self.async_cmd("service", {"service": "reboot"})
+        return result
 
     async def async_shutdown(self) -> bool:
         """Shutdown Robonect."""
-        return await self.async_cmd("service", {"service": "shutdown"})
+        result = await self.async_cmd("service", {"service": "shutdown"})
+        return result
 
     async def async_sleep(self) -> bool:
         """Make Robonect sleep."""
-        return await self.async_cmd("service", {"service": "sleep"})
+        result = await self.async_cmd("service", {"service": "sleep"})
+        return result
 
     def sleeping(self) -> int:
         """Return if the mower is sleeping."""
