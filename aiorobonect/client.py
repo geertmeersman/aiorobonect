@@ -40,9 +40,9 @@ def validate_json(json_str):
 class RobonectException(Exception):
     """Raised when an update has failed."""
 
-    def __init__(self, cmd, exception):
+    def __init__(self, cmd, exception, result):
         """Init the Robonect Exception."""
-        self.message = f"Robonect call for cmd {cmd} failed: {exception}"
+        self.message = f"Aiorobonect call for cmd {cmd} failed: {result}\n{exception}"
         super().__init__(self.message)
 
 
@@ -89,6 +89,7 @@ class RobonectClient:
             _LOGGER.debug(f"Job params: {params}")
             return
 
+        result = None
         self.session_start()
         try:
             _LOGGER.debug(f"Calling http://{self.host}/json?cmd={command}&{params}")
@@ -96,8 +97,9 @@ class RobonectClient:
                 f"http://{self.host}/json?cmd={command}&{params}"
             ) as response:
                 if response.status == 200:
+                    result = await response.text()
+                    _LOGGER.debug(f"Rest API call result for {command}: {result}")
                     result = await response.json(encoding="iso-8859-15")
-                    _LOGGER.debug("Result mower data: %s", result)
                 if response.status >= 400:
                     await self.session_close()
                     response.raise_for_status()
@@ -105,9 +107,12 @@ class RobonectClient:
             if self.transform_json:
                 return transform_json_to_single_depth(result)
             return result
+        except json.JSONDecodeError as exception:
+            await self.session_close()
+            raise RobonectException(command, exception, result)
         except Exception as exception:
             await self.session_close()
-            raise RobonectException(command, exception)
+            raise exception
 
     async def async_cmds(self, commands=None, bypass_sleeping=False) -> dict:
         """Send command to mower."""
