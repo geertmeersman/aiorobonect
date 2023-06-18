@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.3](https://github.com/geertmeersman/aiorobonect/tree/v0.2.3) (2023-06-18)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.2...v0.2.3)
+
+**Merged pull requests:**
+
+- refactor: workflows [\#22](https://github.com/geertmeersman/aiorobonect/pull/22) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.2.2](https://github.com/geertmeersman/aiorobonect/tree/v0.2.2) (2023-06-18)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.1...v0.2.2)
