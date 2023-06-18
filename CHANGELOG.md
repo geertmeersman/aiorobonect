@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.4](https://github.com/geertmeersman/aiorobonect/tree/v0.2.4) (2023-06-18)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.3...v0.2.4)
+
+**Merged pull requests:**
+
+- fix: JSONDecodeError catching [\#23](https://github.com/geertmeersman/aiorobonect/pull/23) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.2.3](https://github.com/geertmeersman/aiorobonect/tree/v0.2.3) (2023-06-18)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.2...v0.2.3)
