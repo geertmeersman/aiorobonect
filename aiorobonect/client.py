@@ -14,6 +14,7 @@ _LOGGER = logging.getLogger(__name__)
 
 
 def encode_dict_values_to_utf8(dictionary):
+    """Encode dict values to utf8."""
     encoded_dict = {}
     for key, value in dictionary.items():
         if isinstance(value, dict):
@@ -40,7 +41,8 @@ class RobonectException(Exception):
     """Raised when an update has failed."""
 
     def __init__(self, cmd, exception):
-        self.message = f"Robonect call for cmd {cmd} failed: {exception.message}"
+        """Init the Robonect Exception."""
+        self.message = f"Robonect call for cmd {cmd} failed: {exception}"
         super().__init__(self.message)
 
 

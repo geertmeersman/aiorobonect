@@ -1,5 +1,5 @@
-name: Synchronize Labels
-"on":
+name: Labels - Synchronize
+on:
   push:
     paths:
       - .github/labels.yml
