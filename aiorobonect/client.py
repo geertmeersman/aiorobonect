@@ -97,7 +97,7 @@ class RobonectClient:
                 f"http://{self.host}/json?cmd={command}&{params}"
             ) as response:
                 if response.status == 200:
-                    result = await response.text()
+                    result = await response.text(encoding="iso-8859-15")
                     _LOGGER.debug(f"Rest API call result for {command}: {result}")
                     result = await response.json(encoding="iso-8859-15")
                 if response.status >= 400:
