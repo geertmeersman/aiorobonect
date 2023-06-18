@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.2.5](https://github.com/geertmeersman/aiorobonect/tree/v0.2.5) (2023-06-18)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.4...v0.2.5)
+
+**Merged pull requests:**
+
+- fix: response text \(encoding=iso-8859-15\) [\#24](https://github.com/geertmeersman/aiorobonect/pull/24) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v0.2.4](https://github.com/geertmeersman/aiorobonect/tree/v0.2.4) (2023-06-18)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.3...v0.2.4)
