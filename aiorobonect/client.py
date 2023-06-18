@@ -39,6 +39,10 @@ def validate_json(json_str):
 class RobonectException(Exception):
     """Raised when an update has failed."""
 
+    def __init__(self, cmd, exception):
+        self.message = f"Robonect call for cmd {cmd} failed: {exception.message}"
+        super().__init__(self.message)
+
 
 class RobonectClient:
     """Class to communicate with the Robonect API."""
@@ -101,7 +105,7 @@ class RobonectClient:
             return result
         except Exception as exception:
             await self.session_close()
-            raise exception
+            raise RobonectException(command, exception)
 
     async def async_cmds(self, commands=None, bypass_sleeping=False) -> dict:
         """Send command to mower."""
