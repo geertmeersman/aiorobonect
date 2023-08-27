@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.2.6](https://github.com/geertmeersman/aiorobonect/tree/v0.2.6) (2023-08-27)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.5...v0.2.6)
+
+**Merged pull requests:**
+
+- fix: isinstance [\#33](https://github.com/geertmeersman/aiorobonect/pull/33) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.0.278 to 0.0.285 [\#32](https://github.com/geertmeersman/aiorobonect/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.0.275 to 0.0.278 [\#28](https://github.com/geertmeersman/aiorobonect/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): update pip requirement from \<23.2,\>=8.0.3 to \>=8.0.3,\<23.3 [\#27](https://github.com/geertmeersman/aiorobonect/pull/27) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.0.272 to 0.0.275 [\#25](https://github.com/geertmeersman/aiorobonect/pull/25) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.2.5](https://github.com/geertmeersman/aiorobonect/tree/v0.2.5) (2023-06-18)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.4...v0.2.5)
