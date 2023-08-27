@@ -28,7 +28,7 @@ def encode_dict_values_to_utf8(dictionary):
 
 def validate_json(json_str):
     """Validate json string."""
-    if type(json_str) is dict:
+    if isinstance(json_str, dict):
         return True
     try:
         return json.loads(json_str)
