@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.2.7](https://github.com/geertmeersman/aiorobonect/tree/v0.2.7) (2023-09-23)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.6...v0.2.7)
+
+**Merged pull requests:**
+
+- fix: don't update when parked [\#38](https://github.com/geertmeersman/aiorobonect/pull/38) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.0.287 to 0.0.290 [\#37](https://github.com/geertmeersman/aiorobonect/pull/37) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump actions/checkout from 3 to 4 [\#36](https://github.com/geertmeersman/aiorobonect/pull/36) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.0.286 to 0.0.287 [\#35](https://github.com/geertmeersman/aiorobonect/pull/35) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.0.285 to 0.0.286 [\#34](https://github.com/geertmeersman/aiorobonect/pull/34) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.2.6](https://github.com/geertmeersman/aiorobonect/tree/v0.2.6) (2023-08-27)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.5...v0.2.6)
