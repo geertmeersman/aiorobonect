@@ -1,5 +1,14 @@
 # Changelog
 
+## [v0.2.8](https://github.com/geertmeersman/aiorobonect/tree/v0.2.8) (2023-10-03)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.7...v0.2.8)
+
+**Merged pull requests:**
+
+- fix: revert fetch state when parked [\#40](https://github.com/geertmeersman/aiorobonect/pull/40) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.0.290 to 0.0.291 [\#39](https://github.com/geertmeersman/aiorobonect/pull/39) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v0.2.7](https://github.com/geertmeersman/aiorobonect/tree/v0.2.7) (2023-09-23)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.6...v0.2.7)
