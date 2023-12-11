@@ -103,7 +103,7 @@ class RobonectClient:
                     # Load JSON data from response text
                     result_json = json.loads(result_text)
                     # Add the epoch timestamp to the JSON result
-                    result_json["sync_time"] = int(datetime.now().timestamp())
+                    result_json["sync_time"] = datetime.now()
                 if response.status >= 400:
                     await self.session_close()
                     response.raise_for_status()
