@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.1](https://github.com/geertmeersman/aiorobonect/tree/v1.0.1) (2023-12-11)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.0...v1.0.1)
+
+**Merged pull requests:**
+
+- fix: synctime =\> datetime.now\(\) [\#54](https://github.com/geertmeersman/aiorobonect/pull/54) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v1.0.0](https://github.com/geertmeersman/aiorobonect/tree/v1.0.0) (2023-12-11)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v0.2.8...v1.0.0)
