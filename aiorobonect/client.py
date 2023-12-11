@@ -1,6 +1,7 @@
 """Robonect library using aiohttp."""
 from __future__ import annotations
 
+from datetime import datetime
 import json
 import logging
 import urllib.parse
@@ -97,16 +98,19 @@ class RobonectClient:
                 f"http://{self.host}/json?cmd={command}&{params}"
             ) as response:
                 if response.status == 200:
-                    result = await response.text(encoding="iso-8859-15")
-                    _LOGGER.debug(f"Rest API call result for {command}: {result}")
-                    result = await response.json(encoding="iso-8859-15")
+                    result_text = await response.text(encoding="iso-8859-15")
+                    _LOGGER.debug(f"Rest API call result for {command}: {result_text}")
+                    # Load JSON data from response text
+                    result_json = json.loads(result_text)
+                    # Add the epoch timestamp to the JSON result
+                    result_json["sync_time"] = int(datetime.now().timestamp())
                 if response.status >= 400:
                     await self.session_close()
                     response.raise_for_status()
             await self.session_close()
             if self.transform_json:
-                return transform_json_to_single_depth(result)
-            return result
+                return transform_json_to_single_depth(result_json)
+            return result_json
         except json.JSONDecodeError as exception:
             await self.session_close()
             raise RobonectException(command, exception, result)
