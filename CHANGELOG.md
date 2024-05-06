@@ -1,5 +1,36 @@
 # Changelog
 
+## [v1.0.2](https://github.com/geertmeersman/aiorobonect/tree/v1.0.2) (2024-05-06)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.1...v1.0.2)
+
+**Merged pull requests:**
+
+- fix: replace aiohttp by httpx [\#79](https://github.com/geertmeersman/aiorobonect/pull/79) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.4.2 to 0.4.3 [\#78](https://github.com/geertmeersman/aiorobonect/pull/78) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.4.1 to 0.4.2 [\#77](https://github.com/geertmeersman/aiorobonect/pull/77) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.3.7 to 0.4.1 [\#76](https://github.com/geertmeersman/aiorobonect/pull/76) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.3.4 to 0.3.7 [\#75](https://github.com/geertmeersman/aiorobonect/pull/75) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.3.3 to 0.3.4 [\#73](https://github.com/geertmeersman/aiorobonect/pull/73) ([dependabot[bot]](https://github.com/apps/dependabot))
+- refactor: improve github workflows [\#72](https://github.com/geertmeersman/aiorobonect/pull/72) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.3.2 to 0.3.3 [\#71](https://github.com/geertmeersman/aiorobonect/pull/71) ([dependabot[bot]](https://github.com/apps/dependabot))
+- docs: bug\_report markdown [\#70](https://github.com/geertmeersman/aiorobonect/pull/70) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.3.0 to 0.3.2 [\#69](https://github.com/geertmeersman/aiorobonect/pull/69) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.2.2 to 0.3.0 [\#68](https://github.com/geertmeersman/aiorobonect/pull/68) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.2.1 to 0.2.2 [\#67](https://github.com/geertmeersman/aiorobonect/pull/67) ([dependabot[bot]](https://github.com/apps/dependabot))
+- refactor: lint [\#66](https://github.com/geertmeersman/aiorobonect/pull/66) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.2.0 to 0.2.1 [\#65](https://github.com/geertmeersman/aiorobonect/pull/65) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump release-drafter/release-drafter from 5 to 6 [\#64](https://github.com/geertmeersman/aiorobonect/pull/64) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): update pip requirement from \<23.4,\>=8.0.3 to \>=8.0.3,\<24.1 [\#63](https://github.com/geertmeersman/aiorobonect/pull/63) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.1.14 to 0.2.0 [\#62](https://github.com/geertmeersman/aiorobonect/pull/62) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump actions/dependency-review-action from 3 to 4 [\#61](https://github.com/geertmeersman/aiorobonect/pull/61) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.1.13 to 0.1.14 [\#60](https://github.com/geertmeersman/aiorobonect/pull/60) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.1.11 to 0.1.13 [\#59](https://github.com/geertmeersman/aiorobonect/pull/59) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.1.9 to 0.1.11 [\#58](https://github.com/geertmeersman/aiorobonect/pull/58) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.1.8 to 0.1.9 [\#57](https://github.com/geertmeersman/aiorobonect/pull/57) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.1.7 to 0.1.8 [\#56](https://github.com/geertmeersman/aiorobonect/pull/56) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump github/codeql-action from 2 to 3 [\#55](https://github.com/geertmeersman/aiorobonect/pull/55) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.0.1](https://github.com/geertmeersman/aiorobonect/tree/v1.0.1) (2023-12-11)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.0...v1.0.1)
