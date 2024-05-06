@@ -21,7 +21,6 @@ Asynchronous library to communicate with the Robonect API
 [![github contributors](https://img.shields.io/github/contributors/geertmeersman/aiorobonect)](https://github.com/geertmeersman/aiorobonect/graphs/contributors)
 [![github commit activity](https://img.shields.io/github/commit-activity/y/geertmeersman/aiorobonect?logo=github)](https://github.com/geertmeersman/aiorobonect/commits/main)
 
-
 ## API Example
 
 ```python
@@ -30,7 +29,7 @@ from aiorobonect import RobonectClient
 
 import asyncio
 import json
-import aiohttp
+import httpx
 
 async def main():
     host = "10.0.0.99"        ## The Robonect mower IP
@@ -51,7 +50,7 @@ async def main():
         tracking = await client.async_cmds(tracking)
         print(json.dumps(tracking, indent=2))
     except Exception as exception:
-        if isinstance(exception, aiohttp.ClientResponseError):
+        if isinstance(exception, httpx.HTTPStatusError):
             print(exception)
     await client.session_close()
 
