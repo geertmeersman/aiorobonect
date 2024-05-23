@@ -54,6 +54,7 @@ class RobonectClient:
         """Initialize the Communication API to get data."""
         self.auth = None
         self.host = host
+        self.scheme = None
         self.username = username
         self.password = password
         self.client = None
@@ -88,15 +89,34 @@ class RobonectClient:
 
         result_json = None
         await self.client_start()
-        url = f"http://{self.host}/json?cmd={command}&{params}"
-        _LOGGER.debug(f"Calling {url}")
-        response = await self.client.get(url)
-        if response.status_code == 200:
+
+        def create_url(scheme):
+            return f"{scheme}://{self.host}/json?cmd={command}&{params}"
+
+        if self.scheme is None:
+            self.scheme = ["http", "https"]
+
+        response = None
+
+        for scheme in self.scheme:
+            url = create_url(scheme)
+            _LOGGER.debug(f"Calling {url}")
+            try:
+                response = await self.client.get(url)
+                if response.status_code == 200:
+                    self.scheme = [scheme]
+                    break  # Exit the loop on successful response
+            except httpx.RequestError as e:
+                _LOGGER.error(
+                    f"Failed to connect using {scheme.upper()}://{self.host}: {e}"
+                )
+
+        if response and response.status_code == 200:
             result_text = response.text
             _LOGGER.debug(f"Rest API call result for {command}: {result_text}")
             result_json = json.loads(result_text)
             result_json["sync_time"] = datetime.now()
-        elif response.status_code >= 400:
+        elif response and response.status_code >= 400:
             response.raise_for_status()
         await self.client_close()
 
