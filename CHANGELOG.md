@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.0.3](https://github.com/geertmeersman/aiorobonect/tree/v1.0.3) (2024-05-23)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.2...v1.0.3)
+
+**Merged pull requests:**
+
+- fix: take https scheme into account [\#81](https://github.com/geertmeersman/aiorobonect/pull/81) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.4.3 to 0.4.4 [\#80](https://github.com/geertmeersman/aiorobonect/pull/80) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.0.2](https://github.com/geertmeersman/aiorobonect/tree/v1.0.2) (2024-05-06)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.1...v1.0.2)
