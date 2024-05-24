@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.4](https://github.com/geertmeersman/aiorobonect/tree/v1.0.4) (2024-05-24)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.3...v1.0.4)
+
+**Merged pull requests:**
+
+- fix: only switch to https scheme on a redirect \(3xx\) or connection error [\#82](https://github.com/geertmeersman/aiorobonect/pull/82) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v1.0.3](https://github.com/geertmeersman/aiorobonect/tree/v1.0.3) (2024-05-23)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.2...v1.0.3)
