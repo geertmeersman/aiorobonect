@@ -103,13 +103,19 @@ class RobonectClient:
             _LOGGER.debug(f"Calling {url}")
             try:
                 response = await self.client.get(url)
-                if response.status_code == 200:
-                    self.scheme = [scheme]
-                    break  # Exit the loop on successful response
+                if response.status_code == 200 or response.status_code >= 400:
+                    self.scheme = [scheme]  # Set scheme for future calls
+                    break  # Exit the loop on successful or error response
+                elif 300 <= response.status_code < 400:
+                    _LOGGER.debug(
+                        f"Received redirect status code {response.status_code}, continuing to next scheme"
+                    )
+                    continue  # Continue loop on redirect (3xx)
             except httpx.RequestError as e:
                 _LOGGER.error(
                     f"Failed to connect using {scheme.upper()}://{self.host}: {e}"
                 )
+                continue  # Continue to the next scheme on connection error
 
         if response and response.status_code == 200:
             result_text = response.text
