@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.0.5](https://github.com/geertmeersman/aiorobonect/tree/v1.0.5) (2024-05-28)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.4...v1.0.5)
+
+**Merged pull requests:**
+
+- fix: change logger error message to warning on requesterror [\#84](https://github.com/geertmeersman/aiorobonect/pull/84) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.4.4 to 0.4.5 [\#83](https://github.com/geertmeersman/aiorobonect/pull/83) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.0.4](https://github.com/geertmeersman/aiorobonect/tree/v1.0.4) (2024-05-24)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.3...v1.0.4)
