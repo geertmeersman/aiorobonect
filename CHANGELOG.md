@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.6](https://github.com/geertmeersman/aiorobonect/tree/v1.0.6) (2024-05-28)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.5...v1.0.6)
+
+**Merged pull requests:**
+
+- fix: throw requesterror when response is none [\#85](https://github.com/geertmeersman/aiorobonect/pull/85) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v1.0.5](https://github.com/geertmeersman/aiorobonect/tree/v1.0.5) (2024-05-28)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.4...v1.0.5)
