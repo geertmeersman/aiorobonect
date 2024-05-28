@@ -1,4 +1,5 @@
 """Setuptools for aiorobonect."""
+
 import setuptools
 
 with open("README.md") as fh:
