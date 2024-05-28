@@ -98,6 +98,7 @@ class RobonectClient:
             self.scheme = ["http", "https"]
 
         response = None
+        last_exception = None
 
         for scheme in self.scheme:
             url = create_url(scheme)
@@ -114,9 +115,16 @@ class RobonectClient:
                     continue  # Continue loop on redirect (3xx)
             except httpx.RequestError as e:
                 _LOGGER.warning(
-                    f"Failed to connect using {scheme}://{self.host} - HTTP STATUS {response.status_code}, {e}"
+                    f"Failed to connect using {scheme}://{self.host}, error: {e}"
                 )
+                last_exception = e
                 continue  # Continue to the next scheme on connection error
+                continue  # Continue to the next scheme on connection error
+
+        if response is None:
+            raise last_exception or httpx.RequestError(
+                "Failed to get a response from the mower."
+            )
 
         if response and response.status_code == 200:
             result_text = response.text
