@@ -112,8 +112,8 @@ class RobonectClient:
                     )
                     continue  # Continue loop on redirect (3xx)
             except httpx.RequestError as e:
-                _LOGGER.error(
-                    f"Failed to connect using {scheme.upper()}://{self.host}: {e}"
+                _LOGGER.warning(
+                    f"Failed to connect using {scheme}://{self.host} - HTTP STATUS {response.status_code}, {e}"
                 )
                 continue  # Continue to the next scheme on connection error
 
