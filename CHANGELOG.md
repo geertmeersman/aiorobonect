@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.7](https://github.com/geertmeersman/aiorobonect/tree/v1.0.7) (2024-05-29)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.6...v1.0.7)
+
+**Merged pull requests:**
+
+- refactor: remove warning on requesterror, set it to debug [\#86](https://github.com/geertmeersman/aiorobonect/pull/86) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v1.0.6](https://github.com/geertmeersman/aiorobonect/tree/v1.0.6) (2024-05-28)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.5...v1.0.6)
