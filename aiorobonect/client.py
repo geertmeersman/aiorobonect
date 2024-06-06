@@ -128,7 +128,13 @@ class RobonectClient:
         if response and response.status_code == 200:
             result_text = response.text
             _LOGGER.debug(f"Rest API call result for {command}: {result_text}")
-            result_json = json.loads(result_text)
+            try:
+                result_json = json.loads(result_text)
+            except json.JSONDecodeError as e:
+                _LOGGER.debug(
+                    f"The returned JSON for {command} is invalid ({e}): {result_text}"
+                )
+                return False
             result_json["sync_time"] = datetime.now()
         elif response and response.status_code >= 400:
             response.raise_for_status()
