@@ -28,31 +28,48 @@ Asynchronous library to communicate with the Robonect API
 from aiorobonect import RobonectClient
 
 import asyncio
-import json
 import httpx
+import logging
+
+logging.basicConfig(level=logging.INFO)
+_LOGGER = logging.getLogger("aiorobonect")
+_LOGGER.setLevel(logging.DEBUG)
 
 async def main():
-    host = "10.0.0.99"        ## The Robonect mower IP
+    host = "10.0.0.99"       ## The Robonect mower IP
     username = "USERNAME"    ## Your Robonect username
     password = "xxxxxxxx"    ## Your Robonect password
     tracking = [             ## Commands to query
                 "battery",
-                "wlan",
-                "version",
-                "timer",
+                "clock",
+                "door",
+                "error",
+                "ext",
+                "gps",
+                "health",
                 "hour",
-                "error"
+                "motor",
+                "portal",
+                "push",
+                "remote",
+                "report",
+                "status",
+                "timer",
+                "version",
+                "weather",
+                "wlan",
+                "wire"
             ]
     client = RobonectClient(host, username, password)
     try:
         status = await client.async_cmd("status")
-        print(status)
+        print(f"Status: {status}")
         tracking = await client.async_cmds(tracking)
-        print(json.dumps(tracking, indent=2))
+        print(f"Tracking: {tracking}")
     except Exception as exception:
         if isinstance(exception, httpx.HTTPStatusError):
             print(exception)
-    await client.session_close()
+    await client.client_close()
 
 asyncio.run(main())
 ```
