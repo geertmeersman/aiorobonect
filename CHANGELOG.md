@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.0.8](https://github.com/geertmeersman/aiorobonect/tree/v1.0.8) (2024-06-06)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.7...v1.0.8)
+
+**Merged pull requests:**
+
+- fix: catch incorrect robonect json [\#89](https://github.com/geertmeersman/aiorobonect/pull/89) ([geertmeersman](https://github.com/geertmeersman))
+- docs: example script update [\#88](https://github.com/geertmeersman/aiorobonect/pull/88) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.4.5 to 0.4.7 [\#87](https://github.com/geertmeersman/aiorobonect/pull/87) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.0.7](https://github.com/geertmeersman/aiorobonect/tree/v1.0.7) (2024-05-29)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.6...v1.0.7)
