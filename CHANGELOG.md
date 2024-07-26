@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.1.1](https://github.com/geertmeersman/aiorobonect/tree/v1.1.1) (2024-07-26)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.1.0...v1.1.1)
+
+**Merged pull requests:**
+
+- fix: improve reset mower blades return data [\#99](https://github.com/geertmeersman/aiorobonect/pull/99) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v1.1.0](https://github.com/geertmeersman/aiorobonect/tree/v1.1.0) (2024-07-26)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.8...v1.1.0)
