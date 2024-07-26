@@ -205,4 +205,4 @@ class RobonectClient:
     async def async_reset_blades(self) -> bool:
         """Reset the mower blades."""
         result = await self.async_cmd("reset_blades")
-        return result
+        return {"reset_blades": result}
