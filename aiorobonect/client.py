@@ -130,7 +130,7 @@ class RobonectClient:
         if response and response.status_code == 200:
             if command == "reset_blades":
                 await self.client_close()
-                return {command: True}
+                return {"successful": True}
             result_text = response.text
             _LOGGER.debug(f"Rest API call result for {command}: {result_text}")
             try:
@@ -205,4 +205,4 @@ class RobonectClient:
     async def async_reset_blades(self) -> bool:
         """Reset the mower blades."""
         result = await self.async_cmd("reset_blades")
-        return {"reset_blades": result}
+        return {"successful": result}
