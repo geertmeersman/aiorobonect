@@ -1,5 +1,20 @@
 # Changelog
 
+## [v1.1.0](https://github.com/geertmeersman/aiorobonect/tree/v1.1.0) (2024-07-26)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.8...v1.1.0)
+
+**Merged pull requests:**
+
+- feat: add reset mower blades function [\#98](https://github.com/geertmeersman/aiorobonect/pull/98) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.5.1 to 0.5.4 [\#97](https://github.com/geertmeersman/aiorobonect/pull/97) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.5.0 to 0.5.1 [\#95](https://github.com/geertmeersman/aiorobonect/pull/95) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.4.10 to 0.5.0 [\#94](https://github.com/geertmeersman/aiorobonect/pull/94) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): update pip requirement from \<24.1,\>=8.0.3 to \>=8.0.3,\<24.2 [\#93](https://github.com/geertmeersman/aiorobonect/pull/93) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.4.9 to 0.4.10 [\#92](https://github.com/geertmeersman/aiorobonect/pull/92) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.4.8 to 0.4.9 [\#91](https://github.com/geertmeersman/aiorobonect/pull/91) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.4.7 to 0.4.8 [\#90](https://github.com/geertmeersman/aiorobonect/pull/90) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.0.8](https://github.com/geertmeersman/aiorobonect/tree/v1.0.8) (2024-06-06)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.0.7...v1.0.8)
