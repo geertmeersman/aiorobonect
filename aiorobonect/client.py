@@ -1,4 +1,4 @@
-"""Robonect library using aiohttp."""
+"""Robonect library using httpx."""
 
 from __future__ import annotations
 
@@ -59,7 +59,7 @@ class RobonectClient:
         self.username = username
         self.password = password
         self.client = None
-        self.sleeping = None
+        self.is_sleeping = None
         self.transform_json = transform_json
         if username is not None and password is not None:
             self.auth = (username, password)
@@ -92,6 +92,8 @@ class RobonectClient:
         await self.client_start()
 
         def create_url(scheme):
+            if command == "reset_blades":
+                return f"{scheme}://{self.host}/?btexe="
             return f"{scheme}://{self.host}/json?cmd={command}&{params}"
 
         if self.scheme is None:
@@ -126,6 +128,9 @@ class RobonectClient:
             )
 
         if response and response.status_code == 200:
+            if command == "reset_blades":
+                await self.client_close()
+                return True
             result_text = response.text
             _LOGGER.debug(f"Rest API call result for {command}: {result_text}")
             try:
@@ -151,7 +156,7 @@ class RobonectClient:
         result = await self.state()
         if result:
             result = {"status": result}
-            if not self.sleeping or bypass_sleeping:
+            if not self.is_sleeping or bypass_sleeping:
                 for cmd in commands:
                     json_res = await self.async_cmd(cmd)
                     if json_res:
@@ -164,7 +169,7 @@ class RobonectClient:
         await self.client_start()
         result = await self.async_cmd("status")
         if result:
-            self.sleeping = result.get("status").get("status") == 17
+            self.is_sleeping = result.get("status").get("status") == 17
             await self.client_close()
         return result
 
@@ -193,6 +198,11 @@ class RobonectClient:
         result = await self.async_cmd("service", {"service": "sleep"})
         return result
 
-    def sleeping(self) -> int:
+    def is_sleeping(self) -> int:
         """Return if the mower is sleeping."""
-        return self.sleeping
+        return self.is_sleeping
+
+    async def async_reset_blades(self) -> bool:
+        """Reset the mower blades."""
+        result = await self.async_cmd("reset_blades")
+        return result
