@@ -130,7 +130,7 @@ class RobonectClient:
         if response and response.status_code == 200:
             if command == "reset_blades":
                 await self.client_close()
-                return True
+                return {command: True}
             result_text = response.text
             _LOGGER.debug(f"Rest API call result for {command}: {result_text}")
             try:
