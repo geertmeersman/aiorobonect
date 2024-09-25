@@ -1,5 +1,18 @@
 # Changelog
 
+## [v1.2.0](https://github.com/geertmeersman/aiorobonect/tree/v1.2.0) (2024-09-25)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.1.3...v1.2.0)
+
+**Merged pull requests:**
+
+- feat: ensure mower stopped when calling direct mode [\#112](https://github.com/geertmeersman/aiorobonect/pull/112) ([geertmeersman](https://github.com/geertmeersman))
+- build\(deps\): bump ruff from 0.6.5 to 0.6.7 [\#111](https://github.com/geertmeersman/aiorobonect/pull/111) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.6.4 to 0.6.5 [\#110](https://github.com/geertmeersman/aiorobonect/pull/110) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.6.2 to 0.6.4 [\#109](https://github.com/geertmeersman/aiorobonect/pull/109) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): bump ruff from 0.5.4 to 0.6.2 [\#107](https://github.com/geertmeersman/aiorobonect/pull/107) ([dependabot[bot]](https://github.com/apps/dependabot))
+- build\(deps\): update pip requirement from \<24.2,\>=8.0.3 to \>=8.0.3,\<24.3 [\#102](https://github.com/geertmeersman/aiorobonect/pull/102) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.1.3](https://github.com/geertmeersman/aiorobonect/tree/v1.1.3) (2024-07-26)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.1.2...v1.1.3)
