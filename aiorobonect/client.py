@@ -89,7 +89,6 @@ class RobonectClient:
             return
 
         result_json = None
-        await self.client_start()
 
         def create_url(scheme):
             if command == "reset_blades":
@@ -99,8 +98,18 @@ class RobonectClient:
         if self.scheme is None:
             self.scheme = ["http", "https"]
 
+        if command == "direct":
+            status = await self.async_stop()
+            if status.get("successful") is False and status.get("error_code") != 7:
+                _LOGGER.warning(
+                    f"Mower not stopped before `direct` command: {status.get('error_code')}"
+                )
+                return
+
         response = None
         last_exception = None
+
+        await self.client_start()
 
         for scheme in self.scheme:
             url = create_url(scheme)
@@ -126,7 +135,6 @@ class RobonectClient:
             raise last_exception or httpx.RequestError(
                 "Failed to get a response from the mower."
             )
-
         if response and response.status_code == 200:
             if command == "reset_blades":
                 await self.client_close()
