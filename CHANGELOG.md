@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.3.0](https://github.com/geertmeersman/aiorobonect/tree/v1.3.0) (2024-09-26)
+
+[Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.2.0...v1.3.0)
+
+**Merged pull requests:**
+
+- feat: equipment configuration [\#113](https://github.com/geertmeersman/aiorobonect/pull/113) ([geertmeersman](https://github.com/geertmeersman))
+
 ## [v1.2.0](https://github.com/geertmeersman/aiorobonect/tree/v1.2.0) (2024-09-25)
 
 [Full Changelog](https://github.com/geertmeersman/aiorobonect/compare/v1.1.3...v1.2.0)
