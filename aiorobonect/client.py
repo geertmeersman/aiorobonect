@@ -83,7 +83,7 @@ class RobonectClient:
         if params is None:
             params = ""
         else:
-            if command == "ext":
+            if command == "equipment":
                 ext = params.pop("ext")
             params = urllib.parse.urlencode(params)
 
@@ -96,7 +96,7 @@ class RobonectClient:
         def create_url(scheme):
             if command == "reset_blades":
                 return f"{scheme}://{self.host}/?btexe="
-            if command == "ext":
+            if command == "equipment":
                 return f"{scheme}://{self.host}/{ext}?{params}"
             return f"{scheme}://{self.host}/json?cmd={command}&{params}"
 
@@ -145,7 +145,7 @@ class RobonectClient:
                 await self.client_close()
                 return {"successful": True}
             result_text = response.text
-            if command == "ext":
+            if command == "equipment":
                 await self.client_close()
                 if "The changes were successfully applied" in result_text:
                     return {"successful": True}
