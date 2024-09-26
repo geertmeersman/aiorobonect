@@ -77,11 +77,14 @@ class RobonectClient:
 
     async def async_cmd(self, command=None, params={}) -> list[dict]:
         """Send command to mower."""
+        ext = None
         if command is None:
             return False
         if params is None:
             params = ""
         else:
+            if command == "ext":
+                ext = params.pop("ext")
             params = urllib.parse.urlencode(params)
 
         if command == "job":
@@ -93,6 +96,8 @@ class RobonectClient:
         def create_url(scheme):
             if command == "reset_blades":
                 return f"{scheme}://{self.host}/?btexe="
+            if command == "ext":
+                return f"{scheme}://{self.host}/{ext}?{params}"
             return f"{scheme}://{self.host}/json?cmd={command}&{params}"
 
         if self.scheme is None:
@@ -140,6 +145,12 @@ class RobonectClient:
                 await self.client_close()
                 return {"successful": True}
             result_text = response.text
+            if command == "ext":
+                await self.client_close()
+                if "The changes were successfully applied" in result_text:
+                    return {"successful": True}
+                else:
+                    return {"successful": False}
             _LOGGER.debug(f"Rest API call result for {command}: {result_text}")
             try:
                 result_json = json.loads(result_text)
