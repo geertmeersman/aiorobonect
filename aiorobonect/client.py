@@ -9,7 +9,7 @@ import urllib.parse
 
 import httpx
 
-from .const import TIMEOUT
+from .const import SAFE_COMMANDS, TIMEOUT
 from .utils import transform_json_to_single_depth
 
 _LOGGER = logging.getLogger(__name__)
@@ -175,8 +175,8 @@ class RobonectClient:
         result = await self.state()
         if result:
             result = {"status": result}
-            if not self.is_sleeping or bypass_sleeping:
-                for cmd in commands:
+            for cmd in commands:
+                if not self.is_sleeping or bypass_sleeping or cmd in SAFE_COMMANDS:
                     json_res = await self.async_cmd(cmd)
                     if json_res:
                         result.update({cmd: json_res})
